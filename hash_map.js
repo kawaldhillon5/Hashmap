@@ -8,25 +8,6 @@ class KeyValuePair {
 
 const peopleArray = [
                      new KeyValuePair("kawal","dhillon"), 
-                     new KeyValuePair("noreen","dhillon"), 
-                     new KeyValuePair("panth","dhillon"), 
-                     new KeyValuePair("daman","gill"),
-                     new KeyValuePair("arsh","gill"),
-                     new KeyValuePair("karan","gill"),
-                     new KeyValuePair("Paramjeet","dhillon"),
-                     new KeyValuePair("Ranjit","dhillon"),
-                     new KeyValuePair("Jajbir","Gill"),
-                     new KeyValuePair("Kuldeep","Gill"),
-                     new KeyValuePair("Rohit","Sandhu"),
-                     new KeyValuePair("Ajay","sekhon"),
-                     new KeyValuePair("Akash","dhillon"),
-                     new KeyValuePair("Jaggi","Randhawa"),
-                     new KeyValuePair("Fateh","dhillon"),
-                     new KeyValuePair("Shubhneet","Ghuman"),
-                     new KeyValuePair("Raman","dhillon"),
-                     new KeyValuePair("Joban","dhillon"),
-                     new KeyValuePair("Anurag","Singh"),
-                     new KeyValuePair("Manbir","dhillon"),
                     ]
 
 class HashMap {
@@ -100,7 +81,7 @@ class HashMap {
         this.#map.forEach(element =>{
             value += `${element.toString()}`;
         });
-        value += "]";
+        value += "] ";
         return value;
     }
   
