@@ -5,6 +5,7 @@ class Node {
       this.next = node ? node: null;
   
     }
+
   }
   
   class LinkedList {
@@ -20,6 +21,7 @@ class Node {
       this.#length = 0;
     
     }
+
   
     append(...values){
       values.forEach(value => {
@@ -99,7 +101,7 @@ class Node {
       let found = false;
       for(let i = 0; i <= this.#length; i++){
         if(node){
-          if(node.value === input){
+          if(node.value.key === input.key){
             found = true;
           }
           node = node.next;
@@ -111,9 +113,9 @@ class Node {
     find(input){
       let node = this.#head;
       let index = null;
-      for(let i = 1; i <= this.#length; i++){
+      for(let i = 0; i <= this.#length; i++){
         if(node){
-          if(node.value === input){
+          if(node.value.key === input.key){
             index =  i
           } 
           node = node.next;
@@ -127,10 +129,10 @@ class Node {
       let value = "";
       for(let i = 0; i <= this.#length; i++){
         if(node === null){
-            value += `null`; 
+            value += ``; 
         } else {
-          value += `(${node.value}) -> `;
-          node = node.next;
+            value += `[${node.value.key}, ${node.value.value}],`;
+            node = node.next;
         }
       }
       return value;
@@ -159,6 +161,17 @@ class Node {
         return undefined;
       }
     }
+
+    add(element){
+        let added = false
+        if(this.contains(element)){
+            this.at(this.find(element)).value.value = element.value;
+        } else {
+            this.append(element);
+            added = true;
+        }
+        return added;   
+    }
   
     removeAt(index){
       if(!(index > this.#length || index < 0)){
@@ -184,5 +197,5 @@ class Node {
         return undefined;
       }
     }
-  
   }
+
