@@ -189,12 +189,11 @@ class Node {
             this.#length--;
           }
         } else {
-          this.#head = this.#head.next;
-          this.#length--;
+          this.pop();
         }
+        return true;
       } else {
-  
-        return undefined;
+        return false;
       }
     }
   }

@@ -7,7 +7,7 @@ class KeyValuePair {
 }
 
 const peopleArray = [
-                     new KeyValuePair("kawal","dhillon"), 
+                     new KeyValuePair("kawal","dhillon"),
                     ]
 
 class HashMap {
@@ -64,7 +64,22 @@ class HashMap {
     has(key){
         const input = {key: key}
         const hash = this.#hash(key);
-        return (this.#map[hash].contains(input)) ? true: false;        
+        if(this.#map[hash]){
+            return (this.#map[hash].contains(input));
+        } else {
+            return false;
+        }        
+    }
+
+    remove(key){
+        const input = {key: key}
+        const hash = this.#hash(key);
+        if(this.has(key)){
+            --this.#noOfKeys;
+            return this.#map[hash].removeAt(this.#map[hash].find(input));
+        } else {
+            return false;
+        }
     }
        
     length(){
@@ -90,4 +105,6 @@ class HashMap {
 const hashMap = new HashMap();
 hashMap.set(peopleArray);
 console.log(hashMap.entries());
+
+
   
